@@ -1,0 +1,37 @@
+.container-app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+input{
+    height: 40px;
+    width: 210px;
+    outline: none;
+   padding-left: 12px;
+   font-size: 16px;
+    
+}
+
+h2{
+    padding-bottom: 18px;
+    font-size: 38px;
+}
+
+.espaco-input{
+    display: flex;
+    flex-direction: column;
+    
+}
+button{
+    height: 40px;
+    width: 226px;
+    margin-top: 18px;
+}
+
+p{
+    margin-top: 18px;
+}
