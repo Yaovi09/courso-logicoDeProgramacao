@@ -6,6 +6,9 @@ function App() {
   const [inputMarujos, setInputMarujo] = useState("");
   const [inputEvento, setInputEvento] = useState("");
 const [viagem, setviagem] = useState("")
+const [saberNadar, setSaberNadar] = useState(true);
+const [idade, setIdade] = useState();
+const [temRecomendacao, setTemRecomendacao] = useState(true)
   function verificar() {
     if (inputMarujos >= 10 || inputEvento >= 1) {
       setviagem("SIM");
@@ -15,7 +18,21 @@ const [viagem, setviagem] = useState("")
    
     setInputEvento("")
     setInputMarujo("")
+
     
+  }
+
+  function verificarIdentidade(){
+    if(idade > 16 && saberNadar == true){
+      alert("Aprovado para o navio")
+      
+    } else if(temRecomendacao == false || idade >= 14){
+        alert("Aprovado sob recomendaçao")
+      }
+      
+    else{
+      alert("Reprovado, Volta quando estiver mais preparado para o mar")
+    }
   }
   return (
     <div className="container-app">
@@ -47,6 +64,25 @@ const [viagem, setviagem] = useState("")
 
         <p>Viagem: <strong>{viagem}</strong> </p>
       </div>
+      <div>
+        <input type="text" 
+        value={saberNadar}
+        onChange={(e)=> setSaberNadar(e.target.value)}
+        />
+      </div>
+      <div>
+        <input type="Number"
+        value={idade}
+        onChange={(e)=>setIdade(e.target.value)}
+         />
+      </div>
+      <div>
+        <input type="text" 
+        value={temRecomendacao}
+        onChange={(e)=>setTemRecomendacao(e.target.value)}
+        />
+      </div>
+      <button onClick={verificarIdentidade}>Imprimir</button>
     </div>
   );
 }
